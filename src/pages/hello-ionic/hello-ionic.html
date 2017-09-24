@@ -1,16 +1,50 @@
 <ion-header>
+
   <ion-navbar>
+    <!--
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Just a Test2</ion-title>
+      -->
+    <ion-title>ShaCuisine</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 
 <ion-content padding>
 
+  <ion-searchbar
+    placeholder="Chinese"
+  >
+</ion-searchbar>
+
+<ion-list>
+  <!-- a list of Cuisines
+  -->
+<button ion-item>
+  <ion-item-divider>
+  <ion-item>
+
+  <ion-thumbnail item-left>
+    <img src = "images/restaurants/joyyee.png">
+    </ion-thumbnail>
+    <h2>Joy Yee Noodle</h2>
+    <p>Rating : 70% </p>
+
+  </ion-item>
+  </ion-item-divider>
+  </button>
+
+</ion-list>
+
+<!--
   <h3>Test change</h3>
+
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)"
 
   <h3>Welcome to your first Ionic app!</h3>
 
@@ -26,5 +60,6 @@
   <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
+-->
 
 </ion-content>
