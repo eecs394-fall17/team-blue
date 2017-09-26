@@ -47,19 +47,6 @@
     </array>
     <key>UIRequiresFullScreen</key>
     <true/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-      <key>NSExceptionDomains</key>
-      <dict>
-        <key>ionic.local</key>
-        <dict>
-          <key>NSExceptionAllowsInsecureHTTPLoads</key>
-          <true/>
-        </dict>
-      </dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
-    </dict>
     <key>IonAppId</key>
     <string>496fa919</string>
     <key>IonChannelName</key>
@@ -70,5 +57,23 @@
     <string>background</string>
     <key>IonMaxVersions</key>
     <string>2</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>ionic.local</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+        <key>10.105.104.165</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+      </dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+    </dict>
   </dict>
 </plist>

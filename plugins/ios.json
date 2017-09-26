@@ -13,6 +13,14 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
+        "cordova-plugin-ionic": {
+            "APP_ID": "496fa919",
+            "CHANNEL_NAME": "Master",
+            "UPDATE_API": "https://api.ionicjs.com",
+            "UPDATE_METHOD": "background",
+            "MAX_STORE": "2",
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "io.ionic.starter"
         },
@@ -23,14 +31,6 @@
             "PACKAGE_NAME": "io.ionic.starter"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
-        },
-        "cordova-plugin-ionic": {
-            "APP_ID": "496fa919",
-            "CHANNEL_NAME": "Master",
-            "UPDATE_API": "https://api.ionicjs.com",
-            "UPDATE_METHOD": "background",
-            "MAX_STORE": "2",
             "PACKAGE_NAME": "io.ionic.starter"
         }
     },

@@ -21,6 +21,12 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="IonicDeploy">
+        <param name="ios-package" onload="true" value="IonicDeploy" />
+    </feature>
+    <feature name="IonicCordovaCommon">
+        <param name="ios-package" onload="true" value="IonicCordovaCommon" />
+    </feature>
     <feature name="SplashScreen">
         <param name="ios-package" value="CDVSplashScreen" />
         <param name="onload" value="true" />
@@ -31,12 +37,6 @@
     </feature>
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
-    </feature>
-    <feature name="IonicDeploy">
-        <param name="ios-package" onload="true" value="IonicDeploy" />
-    </feature>
-    <feature name="IonicCordovaCommon">
-        <param name="ios-package" onload="true" value="IonicCordovaCommon" />
     </feature>
     <name>MyApp</name>
     <description>An awesome Ionic/Cordova app.</description>
@@ -50,6 +50,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="http://10.105.104.165:8100" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />

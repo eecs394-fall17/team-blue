@@ -25,6 +25,15 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-ionic.common",
+        "file": "plugins/cordova-plugin-ionic/www/common.js",
+        "pluginId": "cordova-plugin-ionic",
+        "clobbers": [
+            "IonicCordova"
+        ],
+        "runs": true
+    },
+    {
         "id": "cordova-plugin-splashscreen.SplashScreen",
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "pluginId": "cordova-plugin-splashscreen",
@@ -48,28 +57,19 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
-    },
-    {
-        "id": "cordova-plugin-ionic.common",
-        "file": "plugins/cordova-plugin-ionic/www/common.js",
-        "pluginId": "cordova-plugin-ionic",
-        "clobbers": [
-            "IonicCordova"
-        ],
-        "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "cordova-plugin-add-swift-support": "1.7.0",
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-device": "1.1.4",
+    "cordova-plugin-ionic": "1.1.9",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.2",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-add-swift-support": "1.7.0",
-    "cordova-plugin-ionic": "1.1.9"
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

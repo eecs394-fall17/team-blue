@@ -62,7 +62,20 @@ $background-color: #fff;
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
+$colors-ios: (
 
+primary:    #490000,
+secondary:  #32db64,
+danger:     #770000,
+light:      #f4f4f4,
+dark:       #222,
+favorite:   #69BB7B
+
+);
+
+$primary-color: color($colors-ios, primary);
+$text-ios-color: $primary-color;
+$background-ios-color: #fff;
 
 
 // App Material Design Variables

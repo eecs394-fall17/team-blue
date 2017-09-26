@@ -27511,3 +27511,7 @@ page-hello-ionic ion-title {
 page-hello-ionic ::-webkit-input-placeholder {
   color: #ffffff;
 }
+
+page-restaurant ion-item {
+  text-align: center;
+}
