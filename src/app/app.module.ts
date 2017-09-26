@@ -7,6 +7,7 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { RestaurantPage } from '../pages/restaurant/restaurant';
+import {RestaurantPageModule} from '../pages/restaurant/restaurant.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,11 +18,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    RestaurantPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    RestaurantPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
