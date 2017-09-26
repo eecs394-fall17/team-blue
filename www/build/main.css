@@ -27515,3 +27515,8 @@ page-hello-ionic ::-webkit-input-placeholder {
 page-restaurant ion-item {
   text-align: center;
 }
+
+page-restaurant img.resize {
+  width: 75%;
+  height: 75%;
+}
