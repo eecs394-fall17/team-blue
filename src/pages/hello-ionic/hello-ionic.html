@@ -14,26 +14,30 @@
 
 <ion-content padding>
 
-  <ion-searchbar
-    placeholder="Chinese"
-  >
-</ion-searchbar>
+  <ion-item>
+    <ion-label>Cuisines</ion-label>
+    <ion-select>
+      <ion-option value="c">Chinese</ion-option>
+      <ion-option value="k">Korean</ion-option>
+      <ion-option value="i">Indian</ion-option>
+      <ion-option value="j">Japanese</ion-option>
+      <ion-option value="m">Vietnamese</ion-option>
+    </ion-select>
+  </ion-item>
 
 <ion-list>
-  <!-- a list of Cuisines
-  -->
-  <button ion-item (click) = "showDetails()">
-    <ion-item-divider>
       <ion-item>
   <ion-thumbnail item-left>
     <img src = "../../assets/img/joyyee.png" style='height: 50%; width: 50%; object-fit: contain'>
     </ion-thumbnail>
+      <ion-item-divider>
+        <button ion-item (click) = "showRestaurantDetails()">
     <h2><ion-item text-wrap>Joy Yee Noodle </ion-item></h2>
     <p>Rating : 70% </p>
+      </button>
+    </ion-item-divider>
 
 </ion-item>
-  </ion-item-divider>
-  </button>
 
 
 </ion-list>

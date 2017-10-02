@@ -7,12 +7,16 @@ import {RestaurantPage} from '../restaurant/restaurant';
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-  
+
+  restaurants : Array<string>;
+
   constructor(public nav: NavController) {
+
+    this.restaurants = ["Joy Yee Noodle"]
 
   }
 
-  showDetails(){
+  showRestaurantDetails(){
      this.nav.push(RestaurantPage,{
        name: 'Joy Yee Noodle',
        Rating: '70%'
