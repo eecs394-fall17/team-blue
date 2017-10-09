@@ -8,6 +8,8 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import firebase from "firebase";
+
 
 @Component({
   templateUrl: 'app.html'
@@ -24,6 +26,17 @@ export class MyApp {
     public menu: MenuController,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen
+
+    firebase.initializeApp({
+      apiKey: "AIzaSyB9OHQ2wJ1nQiHo18RHve0fyTZ4Qi8F5Qc",
+      authDomain: "shacuisine-a43ab.firebaseapp.com",
+      databaseURL: "https://shacuisine-a43ab.firebaseio.com",
+      projectId: "shacuisine-a43ab",
+      storageBucket: "shacuisine-a43ab.appspot.com",
+      messagingSenderId: "753679163545"
+    })
+
+
   ) {
     this.initializeApp();
 

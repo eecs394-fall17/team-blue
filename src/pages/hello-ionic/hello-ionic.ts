@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {RestaurantPage} from '../restaurant/restaurant';
+import firebase from 'firebase';
 
 @Component({
   selector: 'page-hello-ionic',

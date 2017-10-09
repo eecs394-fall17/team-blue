@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import firebase from 'firebase';
 //import {RestaurantItem, RestaurantService, MenuItem, MenuService} from ../../restaurant-service
 
 
