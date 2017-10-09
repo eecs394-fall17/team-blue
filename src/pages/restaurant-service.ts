@@ -3,6 +3,8 @@
 
 import { Injectable } from '@angular/core';
 
+import firebase from 'firebase';
+
 export class RestaurantItem {
 
   id:number;
