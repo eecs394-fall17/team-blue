@@ -34,7 +34,7 @@ constructor(){
 
   var rootRef = firebase.database().ref();
   var joyyeenameref = rootRef.child("Restaurants/Joy-Yee's/Name");
-  var joyyename = Object.values(joyyeenameref);
+  var joyyename = joyyeenameref.val();
   
 
  this.restaurants = [
