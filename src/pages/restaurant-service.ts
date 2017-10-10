@@ -34,7 +34,7 @@ constructor(){
 
   var ourDB = firebase.database().ref()
   var joyyeenameref = ourDB.child("Restaurants/Joy-Yee's/Name");
-  var joyyeename = joyyeenameref.once("value");
+  var joyyeename = joyyeenameref.value as! [String: Any];
 
  this.restaurants = [
    new RestaurantItem(1, joyyeename, 70, "joyyee.png","Chinese")
