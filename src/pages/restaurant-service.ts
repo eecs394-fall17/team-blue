@@ -8,12 +8,12 @@ import firebase from 'firebase';
 export class RestaurantItem {
 
   id:number;
-  title:Reference;
+  title:string;
   rating:number;
   image:string;
   cuisine:string;
 
-  constructor (id:number, title:Reference, rating:number, image:string, cuisine:string){
+  constructor (id:number, title:string, rating:number, image:string, cuisine:string){
 
     this.id = id;
     this.title= title;
@@ -32,7 +32,9 @@ restaurants: Array<RestaurantItem>;
 
 constructor(){
 
-  var joyyeename = firebase.database().ref("Restaurante/Joy-Yee's/Name");
+  var ourDB = firebase.database().ref()
+  var joyyeenameref = ourDB.child("Restaurants/Joy-Yee's/Name");
+  var joyyeename = joyyeenameref.once("value");
 
  this.restaurants = [
    new RestaurantItem(1, joyyeename, 70, "joyyee.png","Chinese")
