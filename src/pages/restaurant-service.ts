@@ -38,11 +38,11 @@ constructor(){
   var joyyeenameref = rootRef.child("Restaurants/Joy-Yee's/Name");
   joyyeenameref.once('value')
   .then(function(dataSnapshot) {
-    joyyeename = dataSnapshot.val();
+    this.joyyeename = dataSnapshot.val();
   });
 
  this.restaurants = [
-   new RestaurantItem(1, joyyeename, 70, "joyyee.png","Chinese")
+   new RestaurantItem(1, this.joyyeename, 70, "joyyee.png","Chinese")
  ]
 
 }
