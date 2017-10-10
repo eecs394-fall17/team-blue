@@ -33,11 +33,9 @@ restaurants: Array<RestaurantItem>;
 constructor(){
 
   var rootRef = firebase.database().ref();
-  rootRef.once("value")
-    .then(function(snapshot) {
-    var joyeenameref = snapshot.key; // null
-    var joyyeename = snapshot.child("Restaurants/Joy-Yee's/Name").key; // "ada"
-  });
+  var joyyeenameref = rootRef.child("Restaurants/Joy-Yee's/Name");
+  var joyyeename = joyyeenameref.val();
+  
 
  this.restaurants = [
    new RestaurantItem(1, joyyeename, 70, "joyyee.png","Chinese")
