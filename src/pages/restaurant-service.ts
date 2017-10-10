@@ -32,7 +32,7 @@ restaurants: Array<RestaurantItem>;
 
 constructor(){
 
-  var joyyeename = firebase.database().ref("Restaurante/Joy-Yee's/Name");
+  var joyyeename = firebase.database().ref("Restaurante/Joy-Yee's/Name/value");
 
  this.restaurants = [
    new RestaurantItem(1, joyyeename, 70, "joyyee.png","Chinese")
