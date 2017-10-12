@@ -41,9 +41,8 @@ constructor(){
     this.joyyeename = dataSnapshot.val();
   });
 
- this.restaurants[0] = [
-   new RestaurantItem(1, this.joyyeename, 70, "joyyee.png","Chinese")
- ]
+ this.restaurants.push(new RestaurantItem(1, this.joyyeename, 70, "joyyee.png","Chinese"))
+ 
 
 }
 
