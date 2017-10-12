@@ -36,7 +36,7 @@ constructor(){
 
   var rootRef = firebase.database().ref();
   var joyyeeref = rootRef.child("Restaurants/Joy-Yee's");
-  joyyeeref.child("name").once('value')
+  joyyeeref.child("Name").once('value')
   .then(function(dataSnapshot) {
     this.joyyeename = dataSnapshot.val();
   });
