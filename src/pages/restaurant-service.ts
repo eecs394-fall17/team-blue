@@ -34,6 +34,7 @@ restaurants: Array<RestaurantItem>;
 joyyeename: string;
 joyyeetag: string;
 joyyyerating: string;
+joyyeedescription: string;
 
 
 constructor(){
