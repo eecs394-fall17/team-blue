@@ -35,13 +35,13 @@ joyyeename: string;
 constructor(){
 
   var rootRef = firebase.database().ref();
-  var joyyeenameref = rootRef.child("Restaurants/Joy-Yee's/Name");
-  joyyeenameref.once('value')
+  var joyyeeref = rootRef.child("Restaurants/Joy-Yee's");
+  joyyeeref.child("name").once('value')
   .then(function(dataSnapshot) {
     this.joyyeename = dataSnapshot.val();
   });
 
- this.restaurants = [
+ this.restaurants[0] = [
    new RestaurantItem(1, this.joyyeename, 70, "joyyee.png","Chinese")
  ]
 
