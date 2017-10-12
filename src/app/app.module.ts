@@ -12,6 +12,8 @@ import {RestaurantPageModule} from '../pages/restaurant/restaurant.module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import firebase from 'firebase';
+
 @NgModule({
   declarations: [
     MyApp,
