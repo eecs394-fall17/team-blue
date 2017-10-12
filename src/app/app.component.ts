@@ -8,12 +8,15 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {Injectable} from '@angular/core';
 import firebase from 'firebase';
 
 
 @Component({
   templateUrl: 'app.html'
 })
+
+@Injectable() 
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
