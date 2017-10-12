@@ -27,14 +27,18 @@
 
 <ion-list>
       <ion-item>
-  <ion-thumbnail item-left>
-    <img src = "../../assets/img/joyyee.png" style='height: 50%; width: 50%; object-fit: contain'>
-    </ion-thumbnail>
+
       <ion-item-divider>
-        <button ion-item (click) = "showRestaurantDetails()">
-    <h2><ion-item text-wrap>Joy Yee Noodle </ion-item></h2>
-    <p>Rating : 70% </p>
-      </button>
+
+        <button ion-item text-wrap (click) = "showRestaurantDetails()">
+          <ion-thumbnail item-left>
+            <img src = "../../assets/img/joyyee.png" style='height: 50%; width: 50%; object-fit: contain'>
+            </ion-thumbnail>
+          <h2>
+          Joy Yee Noodle
+            </h2>
+          <p>Rating : 70% </p>
+        </button>
     </ion-item-divider>
 
 </ion-item>
@@ -43,6 +47,10 @@
 </ion-list>
 
 <!--
+
+<h2><ion-item text-wrap>Joy Yee Noodle </ion-item></h2>
+
+
   <h3>Test change</h3>
 
   [(ngModel)]="myInput"

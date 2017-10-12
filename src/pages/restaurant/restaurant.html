@@ -15,25 +15,21 @@
 
 <ion-content padding>
 
-    <ion-item>
+    <ion-item text-wrap>
 
     	<ion-img width = "72" height ="271" src="../../assets/img/joyyee.png" cache ="true" item-right>
   </ion-img>
+
             <h1>{{name}}</h1>
             <h1>Rating: {{Rating}}</h1>
             <h2>Description:</h2>
             <h3><p>
-              <ion-item-divider>
-              <ion-item text-wrap>Joy Yee Noodle opened in Evanston in
+              Joy Yee Noodle opened in Evanston in
             1994 and our second location in Chinatown Square in 1996. We were
             the first in the midwest to offer Taiwanese style bubble teas.
             Going a step further, Joy Yee’s was the first to combine
             the South Asian fresh fruit freezes(smoothies) with the popular
             tapioca balls.
-            </ion-item>
-          </ion-item-divider>
-
-
            </p>
          </h3>
     </ion-item>
@@ -49,21 +45,25 @@ Diners can choose between dozens of dishes, ranging from the
 most traditional Asian favorites to innovative new twists on classic
 recipes. We pride ourselves on offering new and exciting dishes
 -->
-
+<ion-item-divider>
 <ion-list>
  <ion-list-header>Top three authentic dishes</ion-list-header>
- <ion-item>
+
+<ion-item text-wrap>
  <img width="80" height="80" src = "../../assets/img/Spicy_Basil_Chicken_with_Fried_Egg.png" item-left>
- <h2><ion-item text-wrap>Spicy Basil Chicken with Fried Egg</ion-item></h2>
+ <h2>Spicy Basil Chicken with Fried Egg</h2>
  <h2>Authenticity: 95%</h2>
  <h2>Price: $10.55</h2>
- </ion-item>
- <ion-item>
+</ion-item>
+
+<ion-item text-wrap>
  <img width="80" height="80" src = "../../assets/img/Black_Pepper_Beef.png" item-left>
- <h2><ion-item text-wrap>Black Pepper Beef</ion-item></h2>
+ <h2>Black Pepper Beef</h2>
  <h2>Authenticity: 90%</h2>
  <h2>Price: $10.55</h2>
- </ion-item>
+</ion-item>
+
 </ion-list>
+</ion-item-divider>
 
 </ion-content>

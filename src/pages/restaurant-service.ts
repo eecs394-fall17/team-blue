@@ -1,7 +1,7 @@
 
 //A Service class that implements the RestaurantItem and MenuItem Classes
 
-import { Injectable } from '@angular/core';
+//import { Injectable } from '@angular/core';
 
 import firebase from 'firebase';
 
@@ -25,7 +25,7 @@ export class RestaurantItem {
 
 }
 
-@Injectable()
+//@Injectable()
 export class RestaurantService {
 
 restaurants: Array<RestaurantItem>;
@@ -66,7 +66,7 @@ constructor (id:number, title:string, rating:number, image:string, price: number
 
 }
 
-@Injectable()
+//@Injectable()
 export class MenuService {
 
   dishes : Array<MenuItem>;
@@ -84,7 +84,7 @@ constructor(){
 
 getAllDishes(){
 
-  return this.dishes; 
+  return this.dishes;
 }
 
 }

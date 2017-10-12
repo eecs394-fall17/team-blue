@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import {Injectable} from '@angular/core';
 import firebase from 'firebase';
 //import {RestaurantItem, RestaurantService, MenuItem, MenuService} from ../../restaurant-service
 
@@ -16,6 +18,8 @@ import firebase from 'firebase';
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html',
 })
+
+@Injectable()
 export class RestaurantPage {
   name:any;
   Rating:any;
