@@ -29,11 +29,20 @@ export class RestaurantItem {
 export class RestaurantService {
 
 restaurants: Array<RestaurantItem>;
+joyyeename: string;
+
 
 constructor(){
 
+  var rootRef = firebase.database().ref();
+  var joyyeenameref = rootRef.child("Restaurants/Joy-Yee's/Name");
+  joyyeenameref.once('value')
+  .then(function(dataSnapshot) {
+    this.joyyeename = dataSnapshot.val();
+  });
+
  this.restaurants = [
-   new RestaurantItem(1, "Joy Yee Noodle", 70, "joyyee.png","Chinese")
+   new RestaurantItem(1, this.joyyeename, 70, "joyyee.png","Chinese")
  ]
 
 }
