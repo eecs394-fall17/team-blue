@@ -30,53 +30,50 @@ export class RestaurantItem {
 @Injectable()
 export class RestaurantService {
 
-restaurants: Array<RestaurantItem>;
-joyyeename: string;
-joyyeetag: string;
-joyyeerating: string;
-joyyeedescription: string;
+  restaurants: Array<RestaurantItem>;
+  joyyeename: string;
+  joyyeetag: string;
+  joyyeerating: string;
+  joyyeedescription: string;
 
 
-constructor(){
+  constructor(){
 
-  var rootRef = firebase.database().ref();
-  var joyyeeref = rootRef.child("Restaurants/Joy-Yee's");
+    var rootRef = firebase.database().ref();
+    var joyyeeref = rootRef.child("Restaurants/Joy-Yee's");
 
-  joyyeeref.child("Name").once('value').then(function(dataSnapshot) {this.joyyeename = dataSnapshot.val(); });
-  joyyeeref.child("Tag").once('value').then(function(dataSnapshot) {this.joyyeetag = dataSnapshot.val(); });
-  joyyeeref.child("Rating").once('value').then(function(dataSnapshot) {this.joyyeerating = dataSnapshot.val(); });
-  joyyeeref.child("Description").once('value').then(function(dataSnapshot) {this.joyyeedescription = dataSnapshot.val(); });
+    joyyeeref.child("Name").once('value').then(function(dataSnapshot) {this.joyyeename = dataSnapshot.val(); });
+    joyyeeref.child("Tag").once('value').then(function(dataSnapshot) {this.joyyeetag = dataSnapshot.val(); });
+    joyyeeref.child("Rating").once('value').then(function(dataSnapshot) {this.joyyeerating = dataSnapshot.val(); });
+    joyyeeref.child("Description").once('value').then(function(dataSnapshot) {this.joyyeedescription = dataSnapshot.val(); });
 
-  this.restaurants.push(new RestaurantItem(1, this.joyyeename, this.joyyeerating, "joyyee.png", this.joyyeetag, this.joyyeedescription));
+    this.restaurants.push(new RestaurantItem(1, this.joyyeename, this.joyyeerating, "joyyee.png", this.joyyeetag, this.joyyeedescription));
  
+  }
 
-}
+  getAllRestaurants(){
 
-getAllRestaurants(){
-
-  return this.restaurants;
-}
-
+    return this.restaurants;
+  }
 
 }
 
 export class MenuItem {
 
-id: number;
-title: string;
-rating: number;
-image: string;
-price: number;
+  id: number;
+  title: string;
+  rating: number;
+  image: string;
+  price: number;
 
-constructor (id:number, title:string, rating:number, image:string, price: number){
+  constructor (id:number, title:string, rating:number, image:string, price: number){
 
-  this.id = id;
-  this.title= title;
-  this.rating = rating;
-  this.image = image;
-  this.price = price;
-
-}
+    this.id = id;
+    this.title= title;
+    this.rating = rating;
+    this.image = image;
+    this.price = price;
+  }
 
 }
 
@@ -85,20 +82,19 @@ export class MenuService {
 
   dishes : Array<MenuItem>;
 
-constructor(){
+  constructor(){
 
 
-  this.dishes = [
+    this.dishes = [
 
       new MenuItem(1, "Spicy Basil Chicken with Fried Egg", 95, "Spicy_Basil_Chicken_with_Fried_Egg.png", 10.55),
         new MenuItem(2, "Black Pepper Beef", 90, "Black_Pepper_Beef.png", 10.55)
 
-  ]
-}
+    ]
+  }
 
-getAllDishes(){
+  getAllDishes(){
 
-  return this.dishes;
-}
-
+    return this.dishes;
+  }
 }
