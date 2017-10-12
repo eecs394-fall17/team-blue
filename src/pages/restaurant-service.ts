@@ -33,7 +33,7 @@ export class RestaurantService {
 restaurants: Array<RestaurantItem>;
 joyyeename: string;
 joyyeetag: string;
-joyyyerating: string;
+joyyeerating: string;
 joyyeedescription: string;
 
 
