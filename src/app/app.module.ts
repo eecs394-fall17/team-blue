@@ -9,6 +9,12 @@ import { ListPage } from '../pages/list/list';
 import { RestaurantPage } from '../pages/restaurant/restaurant';
 import {RestaurantPageModule} from '../pages/restaurant/restaurant.module';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+
+//, FirebaseListObservable
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
