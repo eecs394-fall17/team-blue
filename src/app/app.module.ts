@@ -12,6 +12,10 @@ import {RestaurantPageModule} from '../pages/restaurant/restaurant.module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import firebase from 'firebase';
 
 @NgModule({
