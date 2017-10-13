@@ -62,7 +62,7 @@ export class RestaurantService {
  
 
     //ref for all peppercorns stuff.
-    var pepperref = rootref.child("Restaurants/Peppercorns-Kitchen");
+    var pepperref = rootRef.child("Restaurants/Peppercorns-Kitchen");
 
     //Getting all the restaurant data from firebase for Peppercorns Kitchen.
     pepperref.child("Name").once('value').then(function(dataSnapshot) {this.peppername = dataSnapshot.val(); });
