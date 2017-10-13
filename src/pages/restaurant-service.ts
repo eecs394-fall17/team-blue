@@ -86,11 +86,11 @@ export class MenuItem {
 
   id: number;
   title: string;
-  rating: string;
+  rating: number;
   image: string;
   price: number;
 
-  constructor (id:number, title:string, rating:string, image:string, price: number){
+  constructor (id:number, title:string, rating:number, image:string, price: number){
 
     this.id = id;
     this.title= title;
