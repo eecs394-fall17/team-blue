@@ -18,7 +18,6 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-
 import firebase from 'firebase';
 
 @NgModule({
