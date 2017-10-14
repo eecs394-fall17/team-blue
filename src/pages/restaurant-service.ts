@@ -113,8 +113,8 @@ export class MenuService {
 
     this.dishes = [
 
-      new MenuItem(1, "Spicy Basil Chicken with Fried Egg", 95, "Spicy_Basil_Chicken_with_Fried_Egg.png", 10.55),
-      new MenuItem(2, "Black Pepper Beef", 90, "Black_Pepper_Beef.png", 10.55)
+      new MenuItem(1, "Spicy Basil Chicken with Fried Egg", "95", "Spicy_Basil_Chicken_with_Fried_Egg.png", 10.55, "None"),
+      new MenuItem(2, "Black Pepper Beef", "90", "Black_Pepper_Beef.png", 10.55, "None")
 
     ]
   }
