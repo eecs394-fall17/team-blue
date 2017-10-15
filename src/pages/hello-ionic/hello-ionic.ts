@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {RestaurantPage} from '../restaurant/restaurant';
+import {RestaurantItem, RestaurantService, MenuItem, MenuService} from '../restaurant-service'
 
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
@@ -13,10 +14,12 @@ import firebase from 'firebase';
 @Injectable()
 export class HelloIonicPage {
 
-  restaurants : Array<string>;
+  //restaurants : Array<RestaurantItem>;
+  restaurants : Array<String>;
 
-  constructor(public nav: NavController) {
+  constructor(public nav: NavController, private restaurantService : RestaurantService) {
 
+    //this.restaurants = restaurantService.getAllRestaurants();
     this.restaurants = ["Joy Yee Noodle"]
 
   }

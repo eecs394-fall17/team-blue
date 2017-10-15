@@ -25,26 +25,53 @@
     </ion-select>
   </ion-item>
 
-<ion-list>
-      <ion-item>
+  <ion-list>
+        <ion-item>
+
+        <ion-item-divider>
+
+          <button ion-item text-wrap (click) = "showRestaurantDetails()">
+            <ion-thumbnail item-left>
+              <img src = "../../assets/img/joyyee.png" style='height: 50%; width: 50%; object-fit: contain'>
+              </ion-thumbnail>
+            <h2>
+            Joy Yee Noodle
+              </h2>
+            <p>Rating : 70% </p>
+          </button>
+      </ion-item-divider>
+
+  </ion-item>
+
+  </ion-list>
+
+  </ion-content>
+
+  
+  <!--
+
+
+<ion-list >
+      <ion-item *ngFor = "#item of restaurants">
 
       <ion-item-divider>
 
         <button ion-item text-wrap (click) = "showRestaurantDetails()">
           <ion-thumbnail item-left>
-            <img src = "../../assets/img/joyyee.png" style='height: 50%; width: 50%; object-fit: contain'>
+            <img src = "../../assets/img/{{item.image}}" style='height: 50%; width: 50%; object-fit: contain'>
             </ion-thumbnail>
           <h2>
-          Joy Yee Noodle
+          {{item.title}}
             </h2>
-          <p>Rating : 70% </p>
+          <p>Rating : {{item.rating}}</p>
         </button>
     </ion-item-divider>
 
 </ion-item>
 
-
 </ion-list>
+
+-->
 
 <!--
 
@@ -73,5 +100,3 @@
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 -->
-
-</ion-content>

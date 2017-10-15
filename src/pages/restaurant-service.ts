@@ -59,7 +59,7 @@ export class RestaurantService {
 
     //Creating a restaurant item object with the relevant Joy Yee's information.
     this.restaurants.push(new RestaurantItem(1, this.joyyeename, this.joyyeerating, "joyyee.png", this.joyyeetag, this.joyyeedescription));
- 
+
 
     //ref for all peppercorns stuff.
     var pepperref = rootRef.child("Restaurants/Peppercorns-Kitchen");
