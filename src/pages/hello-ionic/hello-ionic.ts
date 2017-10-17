@@ -26,22 +26,23 @@ export class HelloIonicPage {
 
   constructor(public nav: NavController, private restaurantService : RestaurantService , public db : AngularFireDatabase) {
 
-
-
     this.items = db.list('Restaurants');
     //this.restaurants = restaurantService.getAllRestaurants();
 
     this.restaurants = db.list("Restaurants");
     this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
 
-    this.fbobject = db.object("/Restaurants/Joy Yee's");
-    this.fbobject.subscribe(snapshot => console.log("got item"));
-    //this.restaurants = ["Joy Yee Noodle"]
 
   }
 
-  showRestaurantDetails(rname){
-   this.nav.push(RestaurantPage,rname);
+  showRestaurantDetails(resObject, dishList){
+   this.nav.push(RestaurantPage,
+     {
+        res : resObject, 
+        dishes: dishList
+    }
+
+   );
 }
 
 }

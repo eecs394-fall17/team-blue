@@ -21,27 +21,31 @@ export class RestaurantPage {
 
   restaurant_obj : FirebaseObjectObservable<any>;
   dishes : FirebaseListObservable<any[]>;
-  dishes_as_array : any;
 
-  name:any;
+
+  dishes_as_array : any;
+  resObj:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public db : AngularFireDatabase) {
 
-    this.name = navParams.get('rname');
-    console.log(this.name);
-    
-    this.restaurant_obj = db.object("/Restaurants/" + this.name);
-    //this.restaurant_obj = db.object("/Restaurants/Joy Yee's");
-    this.restaurant_obj.subscribe(snapshot => console.log("got item"));
+    this.resObj = navParams.get('res');
+    this.dishes_as_array = navParams.get('dishes');
 
-    //this.dishes = db.list( "Restaurant/"  + this.name + "/Dishes");
+    console.log(this.resObj);
+    console.log(this.dishes_as_array);
+
+    //this.restaurant_obj = db.object("/Restaurants/" + this.name);
+    //this.restaurant_obj = db.object("/Restaurants/Joy Yee's");
+    //this.restaurant_obj.subscribe(snapshot => console.log("got item"));
+
+    //this.dishes = db.list( "/Restaurant/"  + this.resObj.Name + "/Dishes");
     //this.dishes.subscribe(dishes => this.dishes_as_array = this.dishes);
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantPage');
-    console.log(this.name);
+    //console.log(this.name);
   }
 
   showDish1Details(){
