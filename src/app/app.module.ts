@@ -37,9 +37,9 @@ export const environment = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(environment, 'shacuisine'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment, 'shacuisine'),
     RestaurantPageModule
   ],
   bootstrap: [IonicApp],
@@ -54,6 +54,7 @@ export const environment = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireDatabase,
     RestaurantService,
     MenuService
   ]

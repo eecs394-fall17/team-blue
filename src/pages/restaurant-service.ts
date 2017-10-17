@@ -1,9 +1,9 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 import firebase from 'firebase';
-
+import { Injectable } from '@angular/core';
 
 //A Service class that implements the RestaurantItem and MenuItem Classes
 export class RestaurantItem {
@@ -28,6 +28,7 @@ export class RestaurantItem {
 
 }
 
+@Injectable()
 export class RestaurantService {
 
   restaurants: any;
@@ -47,10 +48,10 @@ export class RestaurantService {
   database: AngularFireDatabase;
 
 
-  constructor(){
+  constructor(private db : AngularFireDatabase){
 
-    this.database.list('Restaurants');
-    //this.restaurants = db.list('/Restaurants');
+    //this.restaurants = this.database.list('/Restaurants');
+    this.restaurants = db.list('/Restaurants');
     //var rootRef = firebase.database().ref();
 
     /**
