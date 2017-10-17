@@ -49,18 +49,18 @@ recipes. We pride ourselves on offering new and exciting dishes
 <ion-list>
  <ion-list-header>Top three authentic dishes</ion-list-header>
 
-<ion-item text-wrap>
- <img width="80" height="80" src = "../../assets/img/Spicy_Basil_Chicken_with_Fried_Egg.png" item-left>
+<ion-item text-wrap (click) = 'showDish1Details()'>
+ <img src = "../../assets/img/Spicy_Basil_Chicken_with_Fried_Egg.png" item-left style='height: 10%; width: 10%;'>
  <h2>Spicy Basil Chicken with Fried Egg</h2>
- <h2>Authenticity: 95%</h2>
- <h2>Price: $10.55</h2>
+ <p>Authenticity: 95%</p>
+ <p>Price: $10.55</p>
 </ion-item>
 
-<ion-item text-wrap>
- <img width="80" height="80" src = "../../assets/img/Black_Pepper_Beef.png" item-left>
+<ion-item text-wrap (click) = 'showDish2Details()'>
+ <img src = "../../assets/img/Black_Pepper_Beef.png" item-left style='height: 10%; width: 10%;'>
  <h2>Black Pepper Beef</h2>
- <h2>Authenticity: 90%</h2>
- <h2>Price: $10.55</h2>
+ <p>Authenticity: 90%</p>
+ <p>Price: $10.55</p>
 </ion-item>
 
 </ion-list>

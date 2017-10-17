@@ -1,10 +1,11 @@
 
-//A Service class that implements the RestaurantItem and MenuItem Classes
-
-import { Injectable } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 import firebase from 'firebase';
 
+
+//A Service class that implements the RestaurantItem and MenuItem Classes
 export class RestaurantItem {
 
   id:number;
@@ -27,10 +28,12 @@ export class RestaurantItem {
 
 }
 
-@Injectable()
 export class RestaurantService {
 
-  restaurants: Array<RestaurantItem>;
+  restaurants: any;
+
+  //restaurants: Array<RestaurantItem>;
+
   joyyeename: string;
   joyyeetag: string;
   joyyeerating: string;
@@ -41,11 +44,17 @@ export class RestaurantService {
   pepperrating: string;
   pepperdescription: string;
 
+  database: AngularFireDatabase;
+
 
   constructor(){
 
+    this.database.list('Restaurants');
+    //this.restaurants = db.list('/Restaurants');
+    //var rootRef = firebase.database().ref();
+
+    /**
     //root ref of the firebase database
-    var rootRef = firebase.database().ref();
 
 
     //ref for all Joy Yee's related stuff
@@ -72,6 +81,8 @@ export class RestaurantService {
 
     //Creating the restaurant item  object with the relevant Peppcorn's Kitchen information.
     this.restaurants.push(new RestaurantItem(2, this.peppername, this.pepperrating, "pepper.png", this.peppertag, this.pepperdescription));
+
+**/
 
   }
 
@@ -103,13 +114,12 @@ export class MenuItem {
 
 }
 
-@Injectable()
+
 export class MenuService {
 
   dishes : Array<MenuItem>;
 
   constructor(){
-
 
     this.dishes = [
 

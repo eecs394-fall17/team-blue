@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import {Injectable} from '@angular/core';
-import firebase from 'firebase';
-//import {RestaurantItem, RestaurantService, MenuItem, MenuService} from ../../restaurant-service
-
-
 /**
  * Generated class for the RestaurantPage page.
  *
@@ -19,7 +14,6 @@ import firebase from 'firebase';
   templateUrl: 'restaurant.html',
 })
 
-@Injectable()
 export class RestaurantPage {
   name:any;
   Rating:any;
@@ -31,6 +25,14 @@ export class RestaurantPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantPage');
     console.log(this.name);
+  }
+
+  showDish1Details(){
+
+  }
+
+  showDish2Details(){
+
   }
 
 }
