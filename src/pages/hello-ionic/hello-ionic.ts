@@ -6,6 +6,9 @@ import { Injectable } from '@angular/core';
 import {RestaurantPage} from '../restaurant/restaurant';
 import {RestaurantItem, RestaurantService, MenuItem, MenuService} from '../restaurant-service';
 
+
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html'
@@ -18,14 +21,18 @@ export class HelloIonicPage {
   fbobject: FirebaseObjectObservable<any[]>;
   //restaurants : Array<String>;
 
+  items: Observable<any[]>;
+
   restaurants_as_array : any;
 
   constructor(public nav: NavController, private restaurantService : RestaurantService , public db : AngularFireDatabase) {
 
 
+
+    this.items = db.list('Restaurants'); 
     //this.restaurants = restaurantService.getAllRestaurants();
 
-    this.restaurants = db.list("/Restaurants");
+    this.restaurants = db.list("Restaurants");
     this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
 
     this.fbobject = db.object("Restaurants/Joy Yee's");
