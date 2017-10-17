@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database-deprecated';
+import { Injectable } from '@angular/core';
 
 /**
  * Generated class for the RestaurantPage page.
@@ -9,17 +11,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  */
 
 @IonicPage()
+@Injectable()
 @Component({
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html',
 })
 
 export class RestaurantPage {
+
+  restaurant_obj : FirebaseObjectObservable<any>;
+  dishes : FirebaseListObservable<any[]>;
+  dishes_as_array : any;
+
   name:any;
-  Rating:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.name = navParams.get('name');
-    this.Rating = navParams.get('Rating');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public db : AngularFireDatabase) {
+
+    this.name = navParams.get('rname');
+    console.log(this.name);
+    
+    this.restaurant_obj = db.object("/Restaurants/" + this.name);
+    //this.restaurant_obj = db.object("/Restaurants/Joy Yee's");
+    this.restaurant_obj.subscribe(snapshot => console.log("got item"));
+
+    //this.dishes = db.list( "Restaurant/"  + this.name + "/Dishes");
+    //this.dishes.subscribe(dishes => this.dishes_as_array = this.dishes);
+
   }
 
   ionViewDidLoad() {
