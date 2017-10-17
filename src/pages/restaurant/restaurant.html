@@ -32,7 +32,7 @@
   <ion-item-divider>
   <ion-list *ngFor = "let dish of resObj.$Dishes| async">
     <h2>
-        {{resObj.Dishes | json}}
+        {{dish.Name}}
     </h2>
 
   </ion-list>
