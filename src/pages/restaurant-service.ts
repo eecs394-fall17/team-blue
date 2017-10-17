@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database-deprecated';
 import firebase from 'firebase';
 import { Injectable } from '@angular/core';
 
@@ -31,9 +31,10 @@ export class RestaurantItem {
 @Injectable()
 export class RestaurantService {
 
-  restaurants: any;
+  fblist: FirebaseListObservable<any[]>;
+  fbobject: FirebaseObjectObservable<any[]>;
 
-  //restaurants: Array<RestaurantItem>;
+  restaurants: any;
 
   joyyeename: string;
   joyyeetag: string;
@@ -45,13 +46,20 @@ export class RestaurantService {
   pepperrating: string;
   pepperdescription: string;
 
-  database: AngularFireDatabase;
-
 
   constructor(private db : AngularFireDatabase){
 
+      //var joyyeeref = db.object("Restaurants/Joy-Yee's");
+
+    //this.fblist = db.list('Restaurants');
+    //this.fblist.subscribe(fblist => {this.restaurants = this.fblist;});
+    this.fbobject = db.object("Restaurants/Joy-Yee's");
+   
+
+    //this.restaurants.push(new RestaurantItem(1, "JoyYee", "70", "joyyee.png", "Chinese", ""));
+
     //this.restaurants = this.database.list('/Restaurants');
-    this.restaurants = db.list('/Restaurants');
+    //this.restaurants = db.list('/Restaurants');
     //var rootRef = firebase.database().ref();
 
     /**

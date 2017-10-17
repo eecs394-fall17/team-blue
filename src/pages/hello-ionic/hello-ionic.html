@@ -26,8 +26,32 @@
   </ion-item>
 
 
+    <button ion-item text-wrap>
+      <ion-thumbnail item-left>
+        <img src = "../../assets/img/joyyee.png" style='height: 50%; width: 50%; object-fit: contain'>
+        </ion-thumbnail>
 
-  </ion-content>
+        <h2>
+            {{ (fbobject | async)?.Name}}
+          </h2>
+
+      <p>Rating : {{(fbobject | async)?.Rating}}</p>
+    </button>
+
+
+
+
+    <ion-list>
+      <ion-item *ngFor = "#item of restaurants_as_array">
+      <h2>
+          {{item.Name}}
+      </h2>
+    </ion-item>
+    </ion-list>
+
+
+</ion-content>
+
 
 
 
