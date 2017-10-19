@@ -23,6 +23,7 @@ export class HelloIonicPage {
   items: Observable<any[]>;
 
   restaurants_as_array : any;
+  dishes_as_array : any;
 
   constructor(public nav: NavController, private restaurantService : RestaurantService , public db : AngularFireDatabase) {
 
@@ -33,16 +34,28 @@ export class HelloIonicPage {
     this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
 
 
+
   }
 
   showRestaurantDetails(resObject, dishList){
    this.nav.push(RestaurantPage,
      {
-        res : resObject, 
+        res : resObject,
         dishes: dishList
     }
 
    );
+
+}
+
+generateDishes(){
+
+  //let dishes= this.db.list('Restaurants/'+ resName + '/Dishes');
+  //dishes.subscribe(dishes => this.dishes_as_array = dishes);
+  let dishes= this.db.list("Restaurants");
+  dishes.subscribe(dishes => this.dishes_as_array = dishes);
+  return this.dishes_as_array;
+
 }
 
 }
