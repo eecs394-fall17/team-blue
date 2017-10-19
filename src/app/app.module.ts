@@ -8,28 +8,38 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { RestaurantPage } from '../pages/restaurant/restaurant';
 import {RestaurantPageModule} from '../pages/restaurant/restaurant.module';
-
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-
-//, FirebaseListObservable
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import {RestaurantItem, RestaurantService, MenuItem, MenuService} from '../pages/restaurant-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import firebase from 'firebase';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+
+export const environment = {
+    apiKey: "AIzaSyB9OHQ2wJ1nQiHo18RHve0fyTZ4Qi8F5Qc",
+    authDomain: "shacuisine-a43ab.firebaseapp.com",
+    databaseURL: "https://shacuisine-a43ab.firebaseio.com",
+    projectId: "shacuisine-a43ab",
+    storageBucket: "shacuisine-a43ab.appspot.com",
+    messagingSenderId: "753679163545"
+};
+
 
 @NgModule({
   declarations: [
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage,
+    ListPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(environment, 'shacuisine'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RestaurantPageModule
   ],
   bootstrap: [IonicApp],
@@ -43,7 +53,10 @@ import firebase from 'firebase';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireDatabase,
+    RestaurantService,
+    MenuService
   ]
 })
 export class AppModule {}

@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-import {Injectable} from '@angular/core';
-import firebase from 'firebase';
-//import {RestaurantItem, RestaurantService, MenuItem, MenuService} from ../../restaurant-service
-
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database-deprecated';
+import { Injectable } from '@angular/core';
 
 /**
  * Generated class for the RestaurantPage page.
@@ -14,23 +11,49 @@ import firebase from 'firebase';
  */
 
 @IonicPage()
+@Injectable()
 @Component({
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html',
 })
 
-@Injectable()
 export class RestaurantPage {
-  name:any;
-  Rating:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.name = navParams.get('name');
-    this.Rating = navParams.get('Rating');
+
+  restaurant_obj : FirebaseObjectObservable<any>;
+  dishes : FirebaseListObservable<any[]>;
+
+
+  dishes_as_array : any;
+  resObj:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public db : AngularFireDatabase) {
+
+    this.resObj = navParams.get('res');
+    this.dishes_as_array = navParams.get('dishes');
+
+    console.log(this.resObj);
+    console.log(this.dishes_as_array);
+
+    //this.restaurant_obj = db.object("/Restaurants/" + this.name);
+    //this.restaurant_obj = db.object("/Restaurants/Joy Yee's");
+    //this.restaurant_obj.subscribe(snapshot => console.log("got item"));
+
+    //this.dishes = db.list( "/Restaurant/"  + this.resObj.Name + "/Dishes");
+    //this.dishes.subscribe(dishes => this.dishes_as_array = this.dishes);
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantPage');
-    console.log(this.name);
+    //console.log(this.name);
+  }
+
+  showDish1Details(){
+
+  }
+
+  showDish2Details(){
+
   }
 
 }

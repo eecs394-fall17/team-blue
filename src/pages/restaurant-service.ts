@@ -1,10 +1,11 @@
 
-//A Service class that implements the RestaurantItem and MenuItem Classes
-
+import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database-deprecated';
+import firebase from 'firebase';
 import { Injectable } from '@angular/core';
 
-import firebase from 'firebase';
-
+//A Service class that implements the RestaurantItem and MenuItem Classes
 export class RestaurantItem {
 
   id:number;
@@ -30,7 +31,11 @@ export class RestaurantItem {
 @Injectable()
 export class RestaurantService {
 
-  restaurants: Array<RestaurantItem>;
+  fblist: FirebaseListObservable<any[]>;
+  fbobject: FirebaseObjectObservable<any[]>;
+
+  restaurants: any;
+
   joyyeename: string;
   joyyeetag: string;
   joyyeerating: string;
@@ -42,10 +47,23 @@ export class RestaurantService {
   pepperdescription: string;
 
 
-  constructor(){
+  constructor(private db : AngularFireDatabase){
 
+      //var joyyeeref = db.object("Restaurants/Joy-Yee's");
+
+    //this.fblist = db.list('Restaurants');
+    //this.fblist.subscribe(fblist => {this.restaurants = this.fblist;});
+    this.fbobject = db.object("Restaurants/Joy-Yee's");
+   
+
+    //this.restaurants.push(new RestaurantItem(1, "JoyYee", "70", "joyyee.png", "Chinese", ""));
+
+    //this.restaurants = this.database.list('/Restaurants');
+    //this.restaurants = db.list('/Restaurants');
+    //var rootRef = firebase.database().ref();
+
+    /**
     //root ref of the firebase database
-    var rootRef = firebase.database().ref();
 
 
     //ref for all Joy Yee's related stuff
@@ -59,7 +77,7 @@ export class RestaurantService {
 
     //Creating a restaurant item object with the relevant Joy Yee's information.
     this.restaurants.push(new RestaurantItem(1, this.joyyeename, this.joyyeerating, "joyyee.png", this.joyyeetag, this.joyyeedescription));
- 
+
 
     //ref for all peppercorns stuff.
     var pepperref = rootRef.child("Restaurants/Peppercorns-Kitchen");
@@ -72,6 +90,8 @@ export class RestaurantService {
 
     //Creating the restaurant item  object with the relevant Peppcorn's Kitchen information.
     this.restaurants.push(new RestaurantItem(2, this.peppername, this.pepperrating, "pepper.png", this.peppertag, this.pepperdescription));
+
+**/
 
   }
 
@@ -103,13 +123,12 @@ export class MenuItem {
 
 }
 
-@Injectable()
+
 export class MenuService {
 
   dishes : Array<MenuItem>;
 
   constructor(){
-
 
     this.dishes = [
 

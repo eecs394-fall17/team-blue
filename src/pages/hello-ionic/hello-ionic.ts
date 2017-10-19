@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {RestaurantPage} from '../restaurant/restaurant';
-
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database-deprecated';
 import { Injectable } from '@angular/core';
-import firebase from 'firebase';
+import {RestaurantPage} from '../restaurant/restaurant';
+import {RestaurantItem, RestaurantService, MenuItem, MenuService} from '../restaurant-service';
+
+
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-hello-ionic',
@@ -13,18 +16,46 @@ import firebase from 'firebase';
 @Injectable()
 export class HelloIonicPage {
 
-  restaurants : Array<string>;
+  restaurants : FirebaseListObservable<any[]>;
+  fbobject: FirebaseObjectObservable<any[]>;
+  //restaurants : Array<String>;
 
-  constructor(public nav: NavController) {
+  items: Observable<any[]>;
 
-    this.restaurants = ["Joy Yee Noodle"]
+  restaurants_as_array : any;
+  dishes_as_array : any;
+
+  constructor(public nav: NavController, private restaurantService : RestaurantService , public db : AngularFireDatabase) {
+
+    this.items = db.list('Restaurants');
+    //this.restaurants = restaurantService.getAllRestaurants();
+
+    this.restaurants = db.list("Restaurants");
+    this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
+
+
 
   }
 
-  showRestaurantDetails(){
-     this.nav.push(RestaurantPage,{
-       name: 'Joy Yee Noodle',
-       Rating: '70%'
-     });
-  }
+  showRestaurantDetails(resObject, dishList){
+   this.nav.push(RestaurantPage,
+     {
+        res : resObject,
+        dishes: dishList
+    }
+
+   );
+
+}
+
+generateDishes(){
+
+  //let dishes= this.db.list('Restaurants/'+ resName + '/Dishes');
+  //dishes.subscribe(dishes => this.dishes_as_array = dishes);
+  let dishes= this.db.list("Restaurants");
+  dishes.subscribe(dishes => this.dishes_as_array = dishes);
+  return this.dishes_as_array;
+
+}
+
 }
