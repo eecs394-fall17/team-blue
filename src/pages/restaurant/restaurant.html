@@ -18,24 +18,23 @@
   <ion-item text-wrap>
     <ion-thumbnail item-right>
       <img src ="../../assets/img/{{resObj.Path}}" style='height: 50%; width: 50%; object-fit: contain'>
-  </ion-thumbnail>
+    </ion-thumbnail>
 
-          <h1>{{resObj.Name}}</h1>
-          <h1>Rating: {{resObj.Rating}}</h1>
-          <h2>Description:</h2>
-          <h3><p>
-           {{resObj.Description}}
-         </p>
-       </h3>
+    <h1>{{resObj.Name}}</h1>
+    <h1>Rating: {{resObj.Rating}}</h1>
+    <h2>Description:</h2>
+    <h3><p>
+      {{resObj.Description}}
+      </p>
+    </h3>
   </ion-item>
 
   <ion-item-divider>
-  <!-- <ion-list *ngFor = "let dish of resObj.$Dishes| async">
-    <h2>
-       {{dish.Name}} 
-    </h2>
-
-  </ion-list> -->
+    <!-- <ion-list *ngFor = "let dish of resObj.$Dishes| async">
+      <h2>
+        {{dish.Name}} 
+      </h2>
+    </ion-list> -->
 
   </ion-item-divider> 
 
