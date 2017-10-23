@@ -16,7 +16,7 @@
 
   <ion-item>
     <ion-label>Cuisines</ion-label>
-    <ion-select>
+    <ion-select [(ngModel)] = "cuisine">
       <ion-option value="Chinese">Chinese</ion-option>
       <ion-option value="Korean">Korean</ion-option>
       <ion-option value="Indian">Indian</ion-option>
@@ -27,7 +27,7 @@
 
 
   <ion-list  *ngFor = "let item of restaurants_as_array | async">
-    <ng-container *ngIf = "item.Tag == 'Indian'">
+    <ng-container *ngIf = "item.Tag == "cuisine"">
 
       <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
         <ion-item-divider>
