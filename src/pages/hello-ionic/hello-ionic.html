@@ -28,38 +28,23 @@
 
   <ion-list  *ngFor = "let item of restaurants_as_array | async">
     <ng-container *ngIf = "item.Tag == cuisine">
-
-    <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
-      <ion-item-divider>
-      <ion-thumbnail item-left>
-          <img src = "assets/img/{{item.Path}}" style='height: 50%; width: 50%; object-fit: contain'>
-      </ion-thumbnail>
-      <h2>
-        {{item.Name}}
-      </h2>
-      <p>Rating : {{item.Rating}}</p>
-
-     <!-- <p> {{item.Dishes | json }}</p> -->
-
-
-      </ion-item-divider>
-  </button>
-
       <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
         <ion-item-divider>
-        <ion-thumbnail item-left>
-          <img src = "../../assets/img/{{item.Path}}" style='height: 50%; width: 50%; object-fit: contain'>
-        </ion-thumbnail>
-        <h2>
+          <ion-thumbnail item-left>
+            <img src = "assets/img/{{item.Path}}" style='height: 50%; width: 50%; object-fit: contain'>
+            <!-- <img src = "../../assets/img/{{item.Path}}" style='height: 50%; width: 50%; object-fit: contain'> -->
+          </ion-thumbnail>
+          <h2>
           {{item.Name}}
-        </h2>
-        <p>Rating : {{item.Rating}}</p>
+          </h2>
+          <p>Rating : {{item.Rating}}</p>
+
+          <!-- <p> {{item.Dishes | json }}</p> -->
         </ion-item-divider>
       </button>
     </ng-container>
   </ion-list>
-
-
+  
 </ion-content>
 
 
