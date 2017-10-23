@@ -29,7 +29,6 @@
   <ion-list  *ngFor = "let item of restaurants_as_array | async">
     <ng-container *ngIf = "item.Tag == cuisine">
 
-<<<<<<< HEAD
     <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
       <ion-item-divider>
       <ion-thumbnail item-left>
@@ -40,13 +39,12 @@
       </h2>
       <p>Rating : {{item.Rating}}</p>
 
-      <p> {{item.Dishes | json }}</p>
+     <!-- <p> {{item.Dishes | json }}</p> -->
 
 
       </ion-item-divider>
   </button>
 
-=======
       <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
         <ion-item-divider>
         <ion-thumbnail item-left>
@@ -58,8 +56,6 @@
         <p>Rating : {{item.Rating}}</p>
         </ion-item-divider>
       </button>
->>>>>>> search2
-
     </ng-container>
   </ion-list>
 
