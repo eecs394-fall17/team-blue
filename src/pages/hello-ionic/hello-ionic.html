@@ -16,7 +16,7 @@
 
   <ion-item>
     <ion-label>Cuisines</ion-label>
-    <ion-select>
+    <ion-select [(ngModel)] = "cuisine">
       <ion-option value="Chinese">Chinese</ion-option>
       <ion-option value="Korean">Korean</ion-option>
       <ion-option value="Indian">Indian</ion-option>
@@ -26,8 +26,10 @@
   </ion-item>
 
 
-  <ion-list *ngFor = "let item of restaurants_as_array | async">
+  <ion-list  *ngFor = "let item of restaurants_as_array | async">
+    <ng-container *ngIf = "item.Tag == cuisine">
 
+<<<<<<< HEAD
     <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
       <ion-item-divider>
       <ion-thumbnail item-left>
@@ -44,7 +46,21 @@
       </ion-item-divider>
   </button>
 
+=======
+      <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
+        <ion-item-divider>
+        <ion-thumbnail item-left>
+          <img src = "../../assets/img/{{item.Path}}" style='height: 50%; width: 50%; object-fit: contain'>
+        </ion-thumbnail>
+        <h2>
+          {{item.Name}}
+        </h2>
+        <p>Rating : {{item.Rating}}</p>
+        </ion-item-divider>
+      </button>
+>>>>>>> search2
 
+    </ng-container>
   </ion-list>
 
 
