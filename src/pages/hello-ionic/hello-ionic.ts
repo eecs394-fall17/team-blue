@@ -45,6 +45,7 @@ export class HelloIonicPage {
 
 
 
+
   }
 
   showRestaurantDetails(resObject, dishList){
