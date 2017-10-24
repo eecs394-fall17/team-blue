@@ -4,6 +4,7 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} 
 import { Injectable } from '@angular/core';
 import {RestaurantPage} from '../restaurant/restaurant';
 import {RestaurantItem, RestaurantService, MenuItem, MenuService} from '../restaurant-service';
+import 'rxjs/add/operator/map';
 
 
 import { Observable } from 'rxjs/Observable';
@@ -32,6 +33,15 @@ export class HelloIonicPage {
 
     this.restaurants = db.list("Restaurants");
     this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
+
+
+/**
+  this.projects = af.list('/items').map((items) => {
+    return items.map(item => {
+      item.metadata = af.object('/items_meta/' + item.$key);
+      return item;
+    });
+**/
 
 
 

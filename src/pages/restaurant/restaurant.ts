@@ -26,13 +26,26 @@ export class RestaurantPage {
   dishes_as_array : any;
   resObj:any;
 
+  dish_arr : any; 
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public db : AngularFireDatabase) {
 
     this.resObj = navParams.get('res');
-    this.dishes_as_array = navParams.get('dishes');
+    //this.dishes_as_array = JSON.parse(JSON.stringify(this.resObj.Dishes));
+    this.dishes_as_array = this.resObj.Dishes;
 
-    console.log(this.resObj);
+    this.dishes_as_array = Object.keys(this.dishes_as_array).map((key) => {
+
+          return this.dishes_as_array[key];
+    } );
+
+
+
+
     console.log(this.dishes_as_array);
+
+
+    //console.log(this.dishes_as_array);
 
     //this.restaurant_obj = db.object("/Restaurants/" + this.name);
     //this.restaurant_obj = db.object("/Restaurants/Joy Yee's");
