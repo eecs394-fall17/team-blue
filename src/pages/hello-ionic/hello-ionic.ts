@@ -28,11 +28,13 @@ export class HelloIonicPage {
 
   constructor(public nav: NavController, private restaurantService : RestaurantService , public db : AngularFireDatabase) {
 
-    this.items = db.list('Restaurants');
+    this.restaurants = db.list('Restaurants');
     //this.restaurants = restaurantService.getAllRestaurants();
 
-    this.restaurants = db.list("Restaurants");
-    this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
+    this.restaurants_as_array = this.restaurants;
+    this.restaurants_as_array = Object.keys(this.restaurants_as_array).map((key) => {
+      return this.restaurants_as_array[key];
+    });
 
 
 /**

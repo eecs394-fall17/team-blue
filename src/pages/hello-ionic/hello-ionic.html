@@ -28,19 +28,17 @@
 
   <ion-list  *ngFor = "let item of restaurants_as_array | async">
     <ng-container *ngIf = "item.Tag == cuisine">
-
         <ion-item-divider>
           <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
             <ion-thumbnail item-left>
               <img src="../../assets/img/{{item.Path}}" style='height: 50%; width: 50%'>
             </ion-thumbnail>
-          <h2>
-            {{item.Name}}
-          </h2>
-          <p>Rating : {{item.Rating}}</p>
+            <h2>
+              {{item.Name}}
+            </h2>
+            <p>Rating : {{item.Rating}}</p>
           </button>
         </ion-item-divider>
-
     </ng-container>
   </ion-list>
 
