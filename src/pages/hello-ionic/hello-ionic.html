@@ -30,9 +30,13 @@
   <ion-list  *ngFor = "let item of restaurants_as_array | async">
     <ng-container *ngIf = "item.Tag == cuisine">
         <ion-item-divider>
-          <button ion-item textwrap (click) = "showRestaurantDetails(item, item.$Dishes)">
+
+          <button ion-item textwrap (click) = "showRestaurantDetails(item)" alt="placeholder">
+
             <ion-thumbnail item-left>
+              <div class = "resimage">
               <img src="../../assets/img/{{item.Path}}" style='height: 40%; width: 40%'>
+            </div>
             </ion-thumbnail>
             <h2>
               {{item.Name}}

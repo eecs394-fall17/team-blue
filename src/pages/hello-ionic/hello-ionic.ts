@@ -33,12 +33,12 @@ export class HelloIonicPage {
 
     this.restaurants = db.list("Restaurants");
     this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
-    
+
     /**this.restaurants_as_array = Object.keys(this.restaurants).map((key) => {
 
           return this.restaurants[key];
-    } ); **/  
-    
+    } ); **/
+
     //this.restaurants_as_array = this.restaurants;
 
 /**
@@ -50,28 +50,15 @@ export class HelloIonicPage {
 **/
 
 
-
-
   }
 
-  showRestaurantDetails(resObject, dishList){
+  showRestaurantDetails(resObject){
    this.nav.push(RestaurantPage,
      {
-        res : resObject,
-        dishes: dishList
+        res : resObject
     }
 
    );
-
-}
-
-generateDishes(){
-
-  //let dishes= this.db.list('Restaurants/'+ resName + '/Dishes');
-  //dishes.subscribe(dishes => this.dishes_as_array = dishes);
-  let dishes= this.db.list("Restaurants");
-  dishes.subscribe(dishes => this.dishes_as_array = dishes);
-  return this.dishes_as_array;
 
 }
 

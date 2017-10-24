@@ -17,7 +17,9 @@
 <ion-item-divider>
   <ion-item text-wrap>
     <ion-thumbnail item-right>
-      <img src="assets/img/{{resObj.Path}}" style='height: 40%; width: 40%; object-fit: contain'>
+      <div class = "resimage">
+      <img src="assets/img/{{resObj.Path}}" style='height: 40%; width: 40%; object-fit: contain' alt="placeholder">
+      </div>
     </ion-thumbnail>
 
     <h1>{{resObj.Name}}</h1>
@@ -34,7 +36,9 @@
 
     <ion-list *ngFor = "let dish of dishes_as_array">
       <ion-item-divider>
-        <img src = "../../assets/img/{{dish.Path}}" item-left style='height: 10%; width: 10%;'>
+        <ion-thumbnail image-left>
+        <img src = "../../assets/img/{{dish.Path}}" style='height: 10%; width: 10%'>
+      </ion-thumbnail>
       <h2>{{dish.Name}}</h2>
       <p>Authenticity : {{dish.Rating}} </p>
       <p>Price: {{dish.Price}} </p>
