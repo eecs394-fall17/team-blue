@@ -33,6 +33,8 @@ export class HelloIonicPage {
     this.restaurants = db.list("Restaurants");
     this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
 
+    console.log(item.Path);
+
 
 
   }
