@@ -33,13 +33,13 @@ export class HelloIonicPage {
 
     this.restaurants = db.list("Restaurants");
     //this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
-    this.restaurants_as_array = this.restaurants;
-    /**this.restaurants_as_array = Object.keys(this.restaurants_as_array).map((key) => {
+    
+    this.restaurants = Object.keys(this.restaurants).map((key) => {
 
-          return this.restaurants_as_array[key];
+          return this.restaurants[key];
     } ); 
-    **/
-
+    
+    this.restaurants_as_array = this.restaurants;
 
 /**
   this.projects = af.list('/items').map((items) => {
