@@ -34,6 +34,11 @@ export class HelloIonicPage {
     this.restaurants = db.list("Restaurants");
     this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
 
+    this.restaurants_as_array = Object.keys(this.restaurants_as_array).map((key) => {
+
+          return this.restaurants_as_array[key];
+    } );
+
 
 /**
   this.projects = af.list('/items').map((items) => {
