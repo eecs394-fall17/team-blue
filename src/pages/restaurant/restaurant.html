@@ -29,13 +29,13 @@
   <ion-list *ngFor = "let dish of dishes_as_array">
     <ion-item-divider>
       <ion-item text-wrap>
-        <ion-thumbnail image-left>
+        <ion-thumbnail image-start>
           <img src = "../../assets/img/{{dish.Path}}" class="dishimage" alt="{{dish.Path}}">
         </ion-thumbnail>
         <h2>{{dish.Name}}</h2>
-        <p>Authenticity : {{dish.Rating}} </p>
-        <p>Price: {{dish.Price}} </p>
-        <p>Allegies: {{dish.Allergies}} </p>
+        <h3>Authenticity : {{dish.Rating}} </h3>
+        <h4>Price: {{dish.Price}} </h4>
+        <h5>Allegies: {{dish.Allergies}} </h5>
       </ion-item>
     </ion-item-divider>
   </ion-list>
