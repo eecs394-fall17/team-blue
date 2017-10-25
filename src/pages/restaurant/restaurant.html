@@ -1,53 +1,46 @@
-<!--
-  Generated template for the RestaurantPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Back to Cuisines</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-<ion-content padding>
 
-<ion-item-divider>
-  <ion-item text-wrap>
-    <ion-thumbnail item-right>
-      <div class = "resimage">
-      <img src="assets/img/{{resObj.Path}}" class="resimage" alt="{{resObj.Path}}">
-      </div>
-    </ion-thumbnail>
-
-    <h1>{{resObj.Name}}</h1>
-    <h1>Rating: {{resObj.Rating}}</h1>
-    <h2>Description:</h2>
-    <h3><p>
-      {{resObj.Description}}
-      </p>
-    </h3>
-  </ion-item>
-
-</ion-item-divider>
-
-
-    <ion-list *ngFor = "let dish of dishes_as_array">
-      <ion-item-divider>
-        <ion-item text-wrap>
-        <ion-thumbnail image-left>
-        <img src = "../../assets/img/{{dish.Path}}" class="resimage" alt="{{dish.Path}}">
+<ion-content>
+  
+  <ion-item-divider>
+    <ion-item text-wrap>
+      <ion-thumbnail item-right>
+        <div class = "resimage">
+          <img src="assets/img/{{resObj.Path}}" class="resimage" alt="{{resObj.Path}}">
+        </div>
       </ion-thumbnail>
-      <h2>{{dish.Name}}</h2>
-      <p>Authenticity : {{dish.Rating}} </p>
-      <p>Price: {{dish.Price}} </p>
-      <p>Allegies: {{dish.Allergies}} </p>
+      <h1>{{resObj.Name}}</h1>
+      <h1>Rating: {{resObj.Rating}}</h1>
+      <h2>Description:</h2>
+      <h3>
+        <p>
+          {{resObj.Description}}
+        </p>
+      </h3>
     </ion-item>
-    </ion-item-divider>
-    </ion-list>
+  </ion-item-divider>
 
+  <ion-list *ngFor = "let dish of dishes_as_array">
+    <ion-item-divider>
+      <ion-item text-wrap>
+        <ion-thumbnail image-left>
+          <img src = "../../assets/img/{{dish.Path}}" class="resimage" alt="{{dish.Path}}">
+        </ion-thumbnail>
+        <h2>{{dish.Name}}</h2>
+        <p>Authenticity : {{dish.Rating}} </p>
+        <p>Price: {{dish.Price}} </p>
+        <p>Allegies: {{dish.Allergies}} </p>
+      </ion-item>
+    </ion-item-divider>
+  </ion-list>
+
+</ion-content>
 
 <!--
 
@@ -130,4 +123,3 @@ recipes. We pride ourselves on offering new and exciting dishes
 -->
 
 
-</ion-content>
