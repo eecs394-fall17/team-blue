@@ -22,7 +22,7 @@ export class HelloIonicPage {
   //restaurants : Array<String>;
 
   items: any;
-  resarray: any;
+
   restaurants_as_array : any;
   dishes_as_array : any;
 
@@ -31,15 +31,13 @@ export class HelloIonicPage {
     //this.items = db.list('Restaurants');
     //this.restaurants = restaurantService.getAllRestaurants();
 
-    //this.restaurants = db.list("Restaurants");
-    //this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
+    this.restaurants = db.list("Restaurants");
+    this.restaurants.subscribe(restaurants => this.restaurants_as_array = this.restaurants);
 
-    this.resarray = db.list('Restaurants')
-
-    this.restaurants_as_array = Object.keys(this.restaurants).map((key) => {
+    /**this.restaurants_as_array = Object.keys(this.restaurants).map((key) => {
 
           return this.restaurants[key];
-    } ); 
+    } ); **/
 
     //this.restaurants_as_array = this.restaurants;
 
