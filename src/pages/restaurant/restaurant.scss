@@ -1,20 +1,36 @@
 page-restaurant {
-   ion-item{
-    text-align: center;
-  }
+	
+	ion-title{
+    	text-align: left;
+  	}
 
-img.resize{
+  	ion-item{
+  		text-align: center;
+  	}
 
-  width:75%;
- height:75%;
-}
+	img.resize{
 
-.resimage{
+ 		width:75%;
+ 		height:75%;
+	}
 
-  display: block;
-  line-height: 0;
-  width: 90px;
+	.resimage{
 
-}
+  		display: block;
+  		line-height: 0;
+  		width: 100%;
+  		height: 100%;
+  		object-fit: contain;
+	}
+
+	.dishimage{
+
+  		/* line-height: 0; */
+  		display: inline;
+  		width: 100%;
+  		height: 100%;
+  		object-fit: contain;
+  		/* float: left; */
+	}
 
 }
